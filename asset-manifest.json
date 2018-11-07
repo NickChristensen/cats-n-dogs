@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.0fee6ced.chunk.css",
-  "main.js": "/static/js/main.53a34aa5.chunk.js",
-  "main.js.map": "/static/js/main.53a34aa5.chunk.js.map",
-  "static/js/1.c611a5bb.chunk.js": "/static/js/1.c611a5bb.chunk.js",
-  "static/js/1.c611a5bb.chunk.js.map": "/static/js/1.c611a5bb.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/main.0fee6ced.chunk.css.map": "/static/css/main.0fee6ced.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.fba9c04594129977ab0e10c68b68e309.js": "/precache-manifest.fba9c04594129977ab0e10c68b68e309.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/cats-n-dogs/static/css/main.0fee6ced.chunk.css",
+  "main.js": "/cats-n-dogs/static/js/main.29318bd4.chunk.js",
+  "main.js.map": "/cats-n-dogs/static/js/main.29318bd4.chunk.js.map",
+  "static/js/1.c611a5bb.chunk.js": "/cats-n-dogs/static/js/1.c611a5bb.chunk.js",
+  "static/js/1.c611a5bb.chunk.js.map": "/cats-n-dogs/static/js/1.c611a5bb.chunk.js.map",
+  "runtime~main.js": "/cats-n-dogs/static/js/runtime~main.400e7f2f.js",
+  "runtime~main.js.map": "/cats-n-dogs/static/js/runtime~main.400e7f2f.js.map",
+  "static/css/main.0fee6ced.chunk.css.map": "/cats-n-dogs/static/css/main.0fee6ced.chunk.css.map",
+  "index.html": "/cats-n-dogs/index.html",
+  "precache-manifest.8d8295e10b57062586810a29f3ece0cb.js": "/cats-n-dogs/precache-manifest.8d8295e10b57062586810a29f3ece0cb.js",
+  "service-worker.js": "/cats-n-dogs/service-worker.js"
 }
