@@ -10,7 +10,7 @@ let FallingAnimal = styled.div`
   display: inline-block;
   position: absolute;
   left: ${props => props.xPosition}%;
-  top: -100px;
+  top: 0;
   animation: ${fall} ${props => props.duration}s linear forwards;
   animation-play-state: ${props => props.isPlaying ? 'running' : 'paused'};
   cursor: ${props => props.isPlaying ? 'grab' : 'not-allowed'};
@@ -31,6 +31,8 @@ let rotatateClockWise = keyframes`
 `;
 
 let RotatingAnimal = styled.div`
+  position: absolute;
+  bottom: 0;
   font-size: ${props => props.size}px;
   animation: ${props => props.clockWise ? rotatateClockWise : rotateCounterClockWise} ${props => props.duration}s linear infinite;
 `;
