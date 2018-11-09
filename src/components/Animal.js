@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'react-emotion/macro';
+import Transition from 'react-transition-group/Transition';
+
+const ANIMAL_EXIT_DURATION = 200;
 
 let fall = keyframes`
   from { transform: translateY(0) }
@@ -37,21 +40,36 @@ let RotatingAnimal = styled.div`
   animation: ${props => props.clockWise ? rotatateClockWise : rotateCounterClockWise} ${props => props.duration}s linear infinite;
 `;
 
+let RemoveableAnimal = styled.div`
+  transition-property: transform, opacity;
+  transition-duration: ${ANIMAL_EXIT_DURATION}ms;
+  transition-timing-function: ease-in;
+  transform: scale(${props => props.status === 'exiting' ? 3 : 1});
+  opacity: ${props => props.status === 'exiting' ? 0 : 1};
+`;
+
 export default class Animal extends Component {
+  state = { isRescued: false };
+
   handleClick = () => {
     if(!this.props.isPlaying) return;
+    this.setState({ isRescued: true });
+  }
+
+  handleExited = () => {
     this.props.rescue(this.props.id, this.props.points);
   }
 
-  handleAnimationEnd = () => {
+  handleOffScreen = () => {
     this.props.remove(this.props.id);
   }
 
   render() {
+    // This is way too many nested divs! But it's a good way to compose multiple transforms on the same visual element.
     return (
       <FallingAnimal
         onClick={this.handleClick}
-        onAnimationEnd={this.handleAnimationEnd}
+        onAnimationEnd={this.handleOffScreen}
         isPlaying={this.props.isPlaying}
         xPosition={this.props.xPosition}
         duration={this.props.fallDuration}
@@ -61,7 +79,9 @@ export default class Animal extends Component {
           clockWise={this.props.rotateClockWise}
           size={this.props.size}
         >
-          {this.props.type}
+          <Transition timeout={ANIMAL_EXIT_DURATION} in={!this.state.isRescued} onExited={this.handleExited}>
+            {status => <RemoveableAnimal status={status}>{this.props.type}</RemoveableAnimal>}
+          </Transition>
         </RotatingAnimal>
       </FallingAnimal>
     );

@@ -22,4 +22,8 @@ export default styled.button`
   :hover {
     transform: scale(1.2);
   }
+
+  :touch {
+    transform: scale(.8);
+  }
 `;
