@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styled, { keyframes } from 'react-emotion/macro';
 import Transition from 'react-transition-group/Transition';
 
@@ -48,7 +48,7 @@ let RemoveableAnimal = styled.div`
   opacity: ${props => props.status === 'exiting' ? 0 : 1};
 `;
 
-export default class Animal extends Component {
+export default class Animal extends PureComponent {
   state = { isRescued: false };
 
   handleClick = () => {
