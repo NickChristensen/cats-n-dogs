@@ -3,11 +3,11 @@ import styled from 'react-emotion/macro';
 
 import Controls from './Controls';
 import Stage from './Stage';
+import Background from './Background';
 import { DEFAULT_SPEED } from '../constants';
 
 let Container = styled.div`
   height: 100%;
-  /* background: linear-gradient(#e66465, #9198e5); */
   background: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);
 `;
 
@@ -33,6 +33,7 @@ export default class Game extends Component {
   render() {
     return (
       <Container>
+        <Background />
         <Stage
           isPlaying={this.state.isPlaying}
           speed={this.state.speed}
