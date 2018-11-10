@@ -24,7 +24,7 @@ let Speed = styled.div`
   padding: 0 ${SPACING * 4}px;
   flex-grow: 1;
   display: flex;
-  transition: .25s ease-in-out;
+  transition: .3s cubic-bezier(.17,.89,.32,1.28);
   transform: translateY(${props => props.isPlaying ? 100 : 0}%);
 `;
 

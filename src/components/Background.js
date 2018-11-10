@@ -17,7 +17,7 @@ const Sun = styled.div`
   right: 5vw;
 `;
 
-const Clouds =() => {
+const Clouds = () => {
   return new Array(Math.ceil(Math.random() * 5)).fill(null).map((cloud, i) => (
     <Cloud
       key={i}
