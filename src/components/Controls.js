@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import styled from 'react-emotion/macro';
 
 import EmojiButton from './EmojiButton';
-import { SPACING, MIN_SPEED, MAX_SPEED } from '../constants';
+import {
+  SPACING,
+  FONT_SIZE,
+  BUTTON_PADDING,
+  MIN_SPEED,
+  MAX_SPEED
+} from '../constants';
 
 let Container = styled.div`
   position: absolute;
@@ -16,12 +22,11 @@ let Container = styled.div`
 `;
 
 let Score = styled.div`
-  font-size: ${SPACING * 6}px;
-  padding: ${SPACING * 2}px;
+  font-size: ${FONT_SIZE * SPACING}px;
+  padding: 0 ${BUTTON_PADDING * SPACING}px;
 `;
 
 let Speed = styled.div`
-  padding: 0 ${SPACING * 4}px;
   flex-grow: 1;
   display: flex;
   transition: 0.3s cubic-bezier(0.17, 0.89, 0.32, 1.28);
@@ -65,7 +70,9 @@ export default class Controls extends Component {
           </SpeedButton>
         </Speed>
 
-        <Score>{this.props.score}</Score>
+        {!!this.props.score && (
+          <Score>{this.props.score.toLocaleString()}</Score>
+        )}
       </Container>
     );
   }

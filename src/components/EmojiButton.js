@@ -1,9 +1,8 @@
 import styled from 'react-emotion/macro';
 
-import { SPACING } from '../constants';
+import { SPACING, FONT_SIZE, BUTTON_PADDING } from '../constants';
 
-let buttonPadding = 4;
-let emojiSize = 8;
+let size = (BUTTON_PADDING * 2 + FONT_SIZE) * SPACING;
 
 export default styled.button`
   border: none;
@@ -12,9 +11,9 @@ export default styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${SPACING * (emojiSize + buttonPadding)}px;
-  height: ${SPACING * (emojiSize + buttonPadding)}px;
-  font-size: ${SPACING * emojiSize}px;
+  width: ${size}px;
+  height: ${size}px;
+  font-size: ${FONT_SIZE * SPACING}px;
   line-height: 1;
   cursor: pointer;
   transition: 0.05s transform ease-in-out;
