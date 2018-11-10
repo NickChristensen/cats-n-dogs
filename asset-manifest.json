@@ -1,13 +1,13 @@
 {
-  "main.css": "/cats-n-dogs/static/css/main.78ca65f1.chunk.css",
-  "main.js": "/cats-n-dogs/static/js/main.723dd034.chunk.js",
-  "main.js.map": "/cats-n-dogs/static/js/main.723dd034.chunk.js.map",
+  "main.css": "/cats-n-dogs/static/css/main.0a32b0f1.chunk.css",
+  "main.js": "/cats-n-dogs/static/js/main.108301e7.chunk.js",
+  "main.js.map": "/cats-n-dogs/static/js/main.108301e7.chunk.js.map",
   "static/js/1.e7c0048b.chunk.js": "/cats-n-dogs/static/js/1.e7c0048b.chunk.js",
   "static/js/1.e7c0048b.chunk.js.map": "/cats-n-dogs/static/js/1.e7c0048b.chunk.js.map",
   "runtime~main.js": "/cats-n-dogs/static/js/runtime~main.400e7f2f.js",
   "runtime~main.js.map": "/cats-n-dogs/static/js/runtime~main.400e7f2f.js.map",
-  "static/css/main.78ca65f1.chunk.css.map": "/cats-n-dogs/static/css/main.78ca65f1.chunk.css.map",
+  "static/css/main.0a32b0f1.chunk.css.map": "/cats-n-dogs/static/css/main.0a32b0f1.chunk.css.map",
   "index.html": "/cats-n-dogs/index.html",
-  "precache-manifest.73b5eacb1994014604d1ccfec68ba90e.js": "/cats-n-dogs/precache-manifest.73b5eacb1994014604d1ccfec68ba90e.js",
+  "precache-manifest.3aa8f4bbca04333cf9e9792e8de883de.js": "/cats-n-dogs/precache-manifest.3aa8f4bbca04333cf9e9792e8de883de.js",
   "service-worker.js": "/cats-n-dogs/service-worker.js"
 }
