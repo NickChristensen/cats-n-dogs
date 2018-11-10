@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion/macro';
+import styled, { keyframes } from 'react-emotion/macro';
 
 const Cloud = styled.div`
   font-size: 75px;
@@ -9,12 +9,18 @@ const Cloud = styled.div`
   left: ${props => props.left}%;
 `;
 
+const rotate = keyframes`
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+`;
+
 const Sun = styled.div`
   font-size: 75px;
   user-select: none;
   position: absolute;
   top: 5vw;
   right: 5vw;
+  animation: ${rotate} 60s linear forwards;
 `;
 
 const Clouds = () => {
