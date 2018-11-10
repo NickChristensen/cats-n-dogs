@@ -56,13 +56,10 @@ export default class Animal extends PureComponent {
   handleClick = () => {
     if (!this.props.isPlaying) return;
     this.setState({ isRescued: true });
+    this.props.score(this.props.points);
   };
 
-  handleExited = () => {
-    this.props.rescue(this.props.id, this.props.points);
-  };
-
-  handleOffScreen = () => {
+  handleRemove = () => {
     this.props.remove(this.props.id);
   };
 
@@ -71,7 +68,7 @@ export default class Animal extends PureComponent {
     return (
       <FallingAnimal
         onClick={this.handleClick}
-        onAnimationEnd={this.handleOffScreen}
+        onAnimationEnd={this.handleRemove}
         isPlaying={this.props.isPlaying}
         xPosition={this.props.xPosition}
         duration={this.props.fallDuration}
@@ -84,7 +81,7 @@ export default class Animal extends PureComponent {
           <Transition
             timeout={ANIMAL_EXIT_DURATION}
             in={!this.state.isRescued}
-            onExited={this.handleExited}
+            onExited={this.handleRemove}
           >
             {status => (
               <RemoveableAnimal status={status}>

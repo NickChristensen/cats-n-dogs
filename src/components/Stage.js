@@ -45,9 +45,8 @@ export default class Stage extends Component {
     window.clearInterval(this.tick);
   }
 
-  handleRescue = (id, points) => {
+  handleScore = points => {
     this.props.incrementScore(points);
-    this.handleRemove(id);
   };
 
   handleRemove = id => {
@@ -77,7 +76,7 @@ export default class Stage extends Component {
             speed={this.props.speed}
             id={animal.id}
             key={animal.id}
-            rescue={this.handleRescue}
+            score={this.handleScore}
             remove={this.handleRemove}
             {...animal}
           />
