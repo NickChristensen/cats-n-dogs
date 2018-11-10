@@ -23,11 +23,11 @@ export default class Game extends Component {
   };
 
   handleSetSpeed = speed => {
-    this.setState({speed});
+    this.setState({ speed });
   };
 
   incrementScore = points => {
-    this.setState(state => ({ score: state.score + points}));
+    this.setState(state => ({ score: state.score + points }));
   };
 
   render() {
@@ -50,4 +50,3 @@ export default class Game extends Component {
     );
   }
 }
-

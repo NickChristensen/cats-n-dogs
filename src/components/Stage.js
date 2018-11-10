@@ -11,10 +11,10 @@ let Container = styled.div`
   user-select: none;
 `;
 
-let createRandomAnimal = (props) => {
-  let type = Math.random() >= .5 ? '🐕' : '🐈';
-  let rotationDuration = (Math.random() * 50) + 5;
-  let rotateClockWise = Math.random() >= .5;
+let createRandomAnimal = props => {
+  let type = Math.random() >= 0.5 ? '🐕' : '🐈';
+  let rotationDuration = Math.random() * 50 + 5;
+  let rotateClockWise = Math.random() >= 0.5;
   let points = Math.ceil(Math.random() * 10);
   let xPosition = Math.random() * 100;
   let size = pointsToSize(points);
@@ -29,10 +29,10 @@ let createRandomAnimal = (props) => {
     size,
     fallDuration
   };
-}
+};
 
 export default class Stage extends Component {
-  state = { 
+  state = {
     secondsPlayed: 0,
     animals: []
   };
@@ -40,7 +40,7 @@ export default class Stage extends Component {
   componentDidMount() {
     window.setInterval(this.tick, 1000);
   }
-  
+
   componentWillUnmount() {
     window.clearInterval(this.tick);
   }
@@ -48,30 +48,30 @@ export default class Stage extends Component {
   handleRescue = (id, points) => {
     this.props.incrementScore(points);
     this.handleRemove(id);
-  }
+  };
 
-  handleRemove = (id) => {
+  handleRemove = id => {
     this.setState(state => ({
       animals: state.animals.filter(animal => animal.id !== id)
     }));
-  }
-  
+  };
+
   tick = () => {
-    if(!this.props.isPlaying) return;
+    if (!this.props.isPlaying) return;
 
     this.setState(state => ({
       secondsPlayed: ++state.secondsPlayed,
       animals: [
         ...state.animals,
-        {id: state.secondsPlayed, ...createRandomAnimal(this.props)}
+        { id: state.secondsPlayed, ...createRandomAnimal(this.props) }
       ]
     }));
-  }
+  };
 
   render() {
     return (
       <Container isPlaying={this.props.isPlaying}>
-        {this.state.animals.map(animal => ( 
+        {this.state.animals.map(animal => (
           <Animal
             isPlaying={this.props.isPlaying}
             speed={this.props.speed}
@@ -80,7 +80,7 @@ export default class Stage extends Component {
             rescue={this.handleRescue}
             remove={this.handleRemove}
             {...animal}
-          />        
+          />
         ))}
       </Container>
     );

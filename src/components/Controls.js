@@ -11,8 +11,8 @@ let Container = styled.div`
   right: 0;
   display: flex;
   align-items: center;
-  border-top: 1px solid rgba(0,0,0,.1);
-  background-color: rgba(255,255,255, .75);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
 `;
 
 let Score = styled.div`
@@ -24,8 +24,8 @@ let Speed = styled.div`
   padding: 0 ${SPACING * 4}px;
   flex-grow: 1;
   display: flex;
-  transition: .3s cubic-bezier(.17,.89,.32,1.28);
-  transform: translateY(${props => props.isPlaying ? 100 : 0}%);
+  transition: 0.3s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+  transform: translateY(${props => (props.isPlaying ? 100 : 0)}%);
 `;
 
 let SpeedButton = styled(EmojiButton)`
@@ -37,7 +37,6 @@ let Range = styled.input`
 `;
 
 export default class Controls extends Component {
-
   handleSetSpeed = e => {
     this.props.setSpeed(e.target.value);
   };
@@ -45,12 +44,14 @@ export default class Controls extends Component {
   render() {
     return (
       <Container>
-         <EmojiButton onClick={this.props.togglePlay}>
+        <EmojiButton onClick={this.props.togglePlay}>
           {this.props.isPlaying ? '⏸' : '▶️'}
         </EmojiButton>
 
         <Speed isPlaying={this.props.isPlaying}>
-          <SpeedButton onClick={() => this.props.setSpeed(MIN_SPEED)}>🐢</SpeedButton>
+          <SpeedButton onClick={() => this.props.setSpeed(MIN_SPEED)}>
+            🐢
+          </SpeedButton>
           <Range
             type="range"
             min={MIN_SPEED}
@@ -59,7 +60,9 @@ export default class Controls extends Component {
             value={this.props.speed}
             onChange={this.handleSetSpeed}
           />
-          <SpeedButton onClick={() => this.props.setSpeed(MAX_SPEED)}>🐇</SpeedButton>
+          <SpeedButton onClick={() => this.props.setSpeed(MAX_SPEED)}>
+            🐇
+          </SpeedButton>
         </Speed>
 
         <Score>{this.props.score}</Score>

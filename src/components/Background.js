@@ -25,19 +25,17 @@ const Sun = styled.div`
 
 const Clouds = () => {
   return new Array(Math.ceil(Math.random() * 5)).fill(null).map((cloud, i) => (
-    <Cloud
-      key={i}
-      top={Math.random() * 100}
-      left={Math.random() * 100}
-    >☁️</Cloud>
+    <Cloud key={i} top={Math.random() * 100} left={Math.random() * 100}>
+      ☁️
+    </Cloud>
   ));
 };
 
-const Background =  React.memo(() => (
+const Background = React.memo(() => (
   <div>
     <Sun>☀️</Sun>
     <Clouds />
   </div>
 ));
- 
+
 export default Background;

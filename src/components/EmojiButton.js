@@ -17,13 +17,13 @@ export default styled.button`
   font-size: ${SPACING * emojiSize}px;
   line-height: 1;
   cursor: pointer;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
 
   :hover {
     transform: scale(1.2);
   }
 
   :touch {
-    transform: scale(.8);
+    transform: scale(0.8);
   }
 `;

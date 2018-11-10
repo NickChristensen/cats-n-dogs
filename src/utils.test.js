@@ -1,4 +1,4 @@
-import {pointsToSize, speedToDuration} from './utils';
+import { pointsToSize, speedToDuration } from './utils';
 
 it('maps points to size', () => {
   expect(pointsToSize(10)).toEqual(10);
