@@ -12,6 +12,7 @@ import {
 
 let Container = styled.div`
   position: absolute;
+  overflow: hidden;
   bottom: 0;
   left: 0;
   right: 0;
@@ -54,7 +55,10 @@ export default class Controls extends Component {
         </EmojiButton>
 
         <Speed isPlaying={this.props.isPlaying}>
-          <SpeedButton onClick={() => this.props.setSpeed(MIN_SPEED)}>
+          <SpeedButton
+            onClick={() => this.props.setSpeed(MIN_SPEED)}
+            tabIndex={this.props.isPlaying ? -1 : 0}
+          >
             🐢
           </SpeedButton>
           <Range
@@ -64,8 +68,12 @@ export default class Controls extends Component {
             step="5"
             value={this.props.speed}
             onChange={this.handleSetSpeed}
+            tabIndex={this.props.isPlaying ? -1 : 0}
           />
-          <SpeedButton onClick={() => this.props.setSpeed(MAX_SPEED)}>
+          <SpeedButton
+            onClick={() => this.props.setSpeed(MAX_SPEED)}
+            tabIndex={this.props.isPlaying ? -1 : 0}
+          >
             🐇
           </SpeedButton>
         </Speed>
