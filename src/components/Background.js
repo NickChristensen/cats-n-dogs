@@ -20,7 +20,7 @@ const Sun = styled.div`
   position: absolute;
   top: 5vw;
   right: 5vw;
-  animation: ${rotate} 60s linear forwards;
+  animation: ${rotate} 60s linear infinite;
 `;
 
 const Clouds = () => {
