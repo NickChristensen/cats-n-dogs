@@ -37,9 +37,10 @@ let RotatingAnimal = styled.div`
   position: absolute;
   bottom: 0;
   font-size: ${props => props.size}px;
-  animation: ${props =>
-      props.clockWise ? rotatateClockWise : rotateCounterClockWise}
-    ${props => props.duration}s linear infinite;
+  animation: ${props => `
+    ${props.clockWise ? rotatateClockWise : rotateCounterClockWise}
+    ${props.duration}s linear infinite
+  `};
 `;
 
 let RemoveableAnimal = styled.div`
